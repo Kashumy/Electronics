@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    #image-container {
+      max-width: 100%;
+      max-height: 100%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      overflow: hidden;
+    }
+
+    #image {
+      width: 100%;
+      height: auto;
+      transition: transform 0.3s;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="image-container">
+    <img id="image" src="/PrezentacjaLogarytmy-main/a1.png" alt="Obrazek">
+  </div>
+
+  <script>
+    var imageContainer = document.getElementById('image-container');
+    var image = document.getElementById('image');
+
+    imageContainer.addEventListener('click', function(event) {
+      var rect = image.getBoundingClientRect();
+      var x = (event.clientX - rect.left) / rect.width * 100;
+      var y = (event.clientY - rect.top) / rect.height * 100;
+      image.style.transformOrigin = x + '% ' + y + '%';
+      image.style.transform = 'scale(2)';
+    });
+
+    document.addEventListener('click', function(event) {
+      if (!imageContainer.contains(event.target)) {
+        image.style.transform = 'none';
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<meta name="theme-color" content="#5A4256"> <!-- Ustaw kolor, np. niebieski #3498db -->
+ <title>Jak zrobić Obwód ( mb.KP )</title>
+<html>
+<head>
+<style>
+
+html{
+  position :fixed ;
+  user-zoom: all ;
+ 
+  overflow: hidden;
+  width :100%;
+  height :100%;
+}
+*{
+  font-family : 'Times New Roman', Times;
+  font-size : 15px ;
+}
+  .presentation-container {
+    zoom:0.8;
+    margin :20px;
+    padding :20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    position :absolute ;
+    display: flex;
+    background :#8987633D;
+    width :calc(100% - 95px);
+    color: white ;
+    height :calc(100% - 95px);
+    flex-direction: column;
+  }
+  .presentation-div {
+    
+    display: none;
+  }
+  .presentation-div pre{
+    margin-top: -10px;
+    font-size:13px;
+  }
+</style>
+<style>
+  .ulamek {
+    white-space :nowrap;
+    display: flex;
+    flex-direction: column;
+    margin :0;
+    align-items: center;
+    width: max-content;
+  }
+
+  .line {
+    border-top: 1px solid black;
+    width: 100%;
+  }
+
+  .ulamek div {
+    font-size: 1em;
+    
+    /* Możesz dostosować wielkość tekstu według potrzeb */
+    text-align: center;
+  }
+</style>
+
+
+</head>
+<body>
+
+  <script>
+    // Funkcja losująca adres URL iframe
+    function losujIframe() {
+      // Lista adresów URL iframe
+      const adresyURL = [
+        "./Liblaryparticlesm.html",
+        "./Liblaryparticlesm1.html",
+        "./Liblaryparticlesm2.html",
+      ];
+
+      // Losowanie indeksu z listy
+      const losowyIndex = Math.floor(Math.random() * adresyURL.length);
+
+      // Pobranie losowego adresu URL
+      const losowyURL = adresyURL[losowyIndex];
+
+      // Ustawienie losowego adresu URL dla iframe
+      document.querySelector("#mojeIframe").src = losowyURL;
+    }
+
+    // Wywołanie funkcji losującej po załadowaniu strony
+    window.addEventListener("load", losujIframe);
+  </script>
+
+  <!-- Pierwsze iframe z unikalnym ID -->
+  <iframe id="mojeIframe" style="position:absolute; margin: -8px; width :100%;height :100vh;" frameborder="0"></iframe>
+
+
+<div class="presentation-container"  >
+  <div class="presentation-div">
+    <pre style="white-space: pre-wrap; transform: translate(-50%, -50%); top: 50vh; left: calc(50vw - 20px); position: absolute; text-align: center ">
+      <h3>Podstawy Elektroniki</h3><h5>cz 1</h5>
+Jak działać w symulatorze
+    </pre>
+  </div>
+
+  <div class="presentation-div">
+    <pre style="white-space: pre-wrap ">
+      Czym jest symulator
+      <fg style="color:lime">1.</fg> Symulator to program pomagający elektronikom zaplanować obwód i przetestować jego działanie.
+      <fg style="color:lime">2.</fg> Ma on wiele zdolności - od robienia w nim prostych obwodów po procesory.
+      <fg style="color:lime">3.</fg> Symulatory są miejscem, gdzie elektronik może sprawdzić, czy jego obwód działa oraz jak działa, zanim podejmie się zrobienia układu elektronicznego.
+    </pre>
+  </div>
+
+  <div class="presentation-div">
+    <pre style="white-space: pre-wrap ">
+      Naszym symulatorem jest strona Circuit Js.
+      <fg style="color:lime">1.</fg> Mimo że występuje jako aplikacja desktopowa, będziemy go używać w przeglądarkowej wersji.
+      <fg style="color:lime">2.</fg> Program jest otwarto źródłowy na GitHubie, więc można zobaczyć, jak został zaprogramowany.
+      <fg style="color:lime">3.</fg> Strona jest responsywna, co oznacza, że działa i dostosowuje się do różnych urządzeń, np. komputery, telefony.
+    </pre>
+  </div>
+
+  <pre style="white-space: pre-wrap" class="presentation-div">
+    Zaczynamy
+    <fg style="color:lime">1.</fg> Wpisz w Google "Circuit Js".
+    <fg style="color:lime">2.</fg> Kliknij pierwszy link do strony.
+    <fg style="color:lime">3.</fg> Kliknij "Schematy", pusty.
+  </pre>
+
+  <div class="presentation-div">
+    <pre style="white-space: pre-wrap ">   Zadanie pierwsze:  dioda LED!
+      Postępuj zgodnie z instrukcjami.
+      <fg style="color:lime">1.</fg> Kliknij "Rysuj", tam znajdziesz wszystkie
+      elementy elektroniczne, 
+      znajdują sie one w tych zakładkach 
+      
+      <fg style="color:lime">2.</fg>jeżeli jakiegoś elementu nie znasz to
+      kliknij zakładkę pomoc ( na mojej stronie 
+      prawy górny róg )
+      
+      <pre style="font-size: 10px">
+          <fg style="color:lime;">Zmiana wartości elementu</fg>
+          <fg style="color:lime;">1.</fg>
+          w circuit js możesz zmienić wartość elementów 
+          poprzez podwójne kliknięcie ikony elementu
+          
+      Twój układ powinien wyglądać tak jak w prawym górnym rogu:
+      </pre>
+</pre>
+      <img src="./i (1).png" style="position: absolute; top:10px; right:10px; width: 200px; height: 100px" alt="">
+      <img src="./i (2).png" style="position: absolute; top:120px; right:10px; width: 200px; height: 100px" alt="">
+      <p style="position: absolute; top:220px; right:10px; width: 200px; height: 100px; font-size: 5px"  ></p>
+    </pre>
+  </div>
+      <div class="presentation-div">
+        <pre style="white-space: pre-wrap ">
+  <fg style="color: purple;">Wprowadzenie</fg>
+
+   <fg style="color:lime;">zakładka Edytuj</fg>
+   <fg style="color:lime;">1.</fg>
+    zakładka edytuj to zakładka w której możesz edytować szybciej i bardziej sprawnie swój obwód.
+    np możesz kliknąć cofnij aby cofnąć jeżeli coś ci sie nie udało
+   
+            <fg style="color:lime;">PRO TIP</fg> kliknij restart aby uruchomić obwód ponownie 
+    
+        </pre>
+      </div>
+    <div class="presentation-div">
+      <pre style="white-space: pre-wrap ">
+        <fg style="color:lime;">Sterowanie Na Komputerze:</fg> <fg style="color:lime;">1.</fg>
+   używaj scrolla i myszki do poruszania sie po mapie bez klikania przycisków na myszy
+  
+      </pre>
+    </div>
+  
+  <div class="presentation-div">
+    <pre style="white-space: pre-wrap ">
+      <fg style="color:lime;">Sterowanie Mobilne:</fg> <fg style="color:lime;">1.</fg>
+w circuit js sterowanie po mapie jest zalezne od architektury sprzętu
+jeżeli masz telefon to kliknij Rysuj I przycisk na dole ' Zaznacz '
+wtedy możesz przy użyciu 2 palców możesz oddalać i przybliżyć widoczność mapy oraz przesuwając je razem poruszać się po mapie
+    </pre>
+  </div>
+
+  
+
+  
+  <div class="presentation-div">
+    <pre style="white-space: pre-wrap ">
+      <fg style="color:lime;">Opcja Zaznacz w zakładce rysuj:</fg> <fg style="color:lime;">1.</fg>
+
+
+funkcja 'zaznacz' w 'Rysuj' służy do edycji położenia punktów przy pojedynczym kliknieciu na objekt który po kliknięciu podswietli się na niebiesko nastepujaco kolejne klikniecie na jeden z (kwadrtowych punktów) punkt powinien sie powiększyć i przytrzymanie przy następnym dotknieciu od punktu  do danego miejsca służy do edytowania pozycji tego punktu 
+
+jezeli zaznaczysz element to po kliknięciu edycja możesz kliknąć wytnij aby usunąć objekt
+
+przytrzymaj w losowym punkcie na mapie i zaznacz wszystkie elementy 
+aby można bylo edytować je wszystkie na raz
+
+    </pre>
+  </div>
+  
+  
+  <div class="presentation-div">
+    <pre style="white-space: pre-wrap " >
+      <fg style="color:lime;"> -></fg> Warto wspomnieć że to był głównie wstęp do obsługi circuit js<fg style="color:lime;">!</fg>
+      A teraz zajmiemy się kondensatorami i tranzystorami npn
+    </pre>
+  </div>
+
+  <div class="presentation-div">
+    <pre style="white-space: pre-wrap ">
+      Kondensatory to elementy elektroniczne, które składają się z dwóch płytek przewodnikowych odzielonych izolatorem.
+      Mają zdolność do pobierania ładunku i w razie potrzeby rozładowania ładunku.
+      Wygląda to mniej więcej tak: jeżeli podłączysz diodę LED bezpośrednio pod kondensator z baterią, to dioda się zapali i potem zgaśnie w zależności od pojemności.
+      Ale jeżeli naładujesz kondensator i podłączysz go pod LED, to dioda wykona to samo bo ładunek elektryczny jest zgromadzony pomiędzy przewodnikami a izolatorem
+    </pre>
+  </div>
+
+  <div class="presentation-div">
+    <pre style="white-space: pre-wrap ">
+
+<h3>Tranzystor NPN</h3>
+tworzy 3 warstwy półprzewodnikowe
+negatywną pozytywna negatywną
+
+Gdy na warstwę bazową "B" (p) tranzystora wprowadza się napięcie,
+umożliwia to przepływ większego napięcia między warstwą kolektora "C" (n) a
+emiterem "E" (n) jeżeli przez Kolektor "C" (n) przechodzi napięcie .
+Ten proces sterowania prądem nazywany jest wzmacnianiem
+tranzystorowym. NPN oznacza, 
+że prąd płynie od emitera (n) "E" do
+kolektora (n) "C" przez warstwę bazową (p) "B".
+
+      <img src="./npn.png" style="position: absolute; bottom:20px; right:10px; width: 140px; height: 140px" alt="">
+    </pre>
+  </div>
+
+
+
+
+  <div class="presentation-div">
+    <pre style="white-space: pre-wrap; margin: 10px;">
+      Tranzystor NPN:
+      Oto przykład bramki logicznej AND.
+      Tak działa ta bramka:
+
+      <table border="1">
+        <tr>
+          <th>A1</th>
+          <th>A2</th>
+          <th>Wyjście</th>
+        </tr>
+        <tr>
+          <td>0</td>
+          <td>0</td>
+          <td>0</td>
+        </tr>
+        <tr>
+          <td>0</td>
+          <td>1</td>
+          <td>0</td>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>0</td>
+          <td>0</td>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+        </tr>
+      </table>
+
+      <styletext style="position: absolute; top:0px; right:10px;" >Bramka AND</styletext>
+      <img src="./a1.png" style="position: absolute; top:20px; right:10px; width: 260px; height: 140px" alt="">
+
+
+    </pre>
+  </div>
+
+  <div class="presentation-div">
+    <pre style="white-space: pre-wrap; margin: 10px;">
+      Tranzystor NPN:
+      Oto przykład bramki logicznej NOT.
+      Tak działa ta bramka:
+
+      <table border="1">
+        <tr>
+          <th>wejście</th>
+          <th>Wyjście</th>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>0</td>
+        </tr>
+        <tr>
+          <td>0</td>
+          <td>1</td>
+        </tr>
+
+      </table>
+
+
+
+      <styletext style="position: absolute; top:180px; right:10px;" >Bramka NOT</styletext>
+      <img src="./i2 (1).png" style="position: absolute; top:20px; right:10px; width: 100px; height: 100px" alt="">
+      <img src="./i2 (2).png" style="position: absolute; top:20px; right:110px; width: 100px; height: 100px" alt="">
+    </pre>
+  </div>
+
+
+  <div class="presentation-div">
+    <pre style="white-space: pre-wrap ">   
+Przedstawiam 2 kolejne najważniejsze układy logiczne 
+
+1. czasomierz . opis:
+prosty układ czas do wyzerowania napięcia to jest wzór 
+T=R*C
+rezystancja * pojemność kondensatora 
+spowoduje przygasanie diody led
+2. połączenie czasomierza z bramką NOT
+spowoduje zapalenie diody led po jakimś czasie
+ponieważ gdy czasomierz osiagnie 63.2% 
+swojej wartości bliskiej 0v
+wtedy bramka not która działa 
+tak że jeżeli ma napięcie
+to wyjście=0 a jeżeli nie ma napięcia wyjście=1
+
+
+
+    </pre>
+    <img src="./dz (1).png" style="position: absolute; top:10px; right:10px; width: 200px; height: 100px" alt="">
+    <img src="./dz (2).png" style="position: absolute; top:120px; right:10px; width: 200px; height: 100px" alt="">
+    <p style="position: absolute; top:220px; right:10px; width: 200px; height: 100px; font-size: 10px">Wiecej informacji jak zrobić ten schemat możesz
+      znaleźć na następnym slajdzie</p>
+    </pre>
+  </div>
+
+
+
+
+
+
+
+
+  <div class="presentation-div">
+    <pre style="white-space: pre-wrap; transform: translate(-50%, -50%); top:50vh; left: calc(50vw - 20px); position: absolute; text-align: center ">
+      Zadania dla was:
+      1. Użyj napięcia 5V, spróbuj znaleźć rezystor, który spowoduje, że z napięcia 5V zmieni się na 2V.
+      2. Zrób, aby dioda zapaliła się po kilku sekundach od startu. Następująco: druga dioda zapali się za tą pierwszą, ale zgaśnie po kilku sekundach.
+    </pre>
+  </div>
+
+
+
+
+  <div class="presentation-div">
+    <pre style="white-space: pre-wrap; transform: translate(-50%, -50%); top:50vh; left: calc(50vw - 20px); position: absolute; text-align: center ">
+czesć dalsza naspąpi
+    </pre>
+  </div>
+</div>
+
+</div>
+
+<script>
+  let currentDivIndex = 0;
+  const divs = document.querySelectorAll(".presentation-div");
+  var fullscreen=0;
+
+  function showNextDiv() {
+//    document.documentElement.requestFullscreen()
+    // Tworzenie nowego obiektu Audio
+var audio = new Audio('./hit.ogg');
+
+// Odtwarzanie dźwięku
+audio.play();
+
+    if(fullscreen==1){
+    divs[currentDivIndex].style.display = "none";
+    currentDivIndex++;
+    if (currentDivIndex >= divs.length) {
+      currentDivIndex = 0;
+    }
+    divs[currentDivIndex].style.display = "block";
+    }
+    fullscreen=1
+  }
+function showPrevDiv() {
+//  document.documentElement.requestFullscreen()
+  // Tworzenie nowego obiektu Audio
+  var audio = new Audio('./hit.ogg');
+
+  // Odtwarzanie dźwięku
+  audio.play();
+
+  if (fullscreen == 1) {
+    divs[currentDivIndex].style.display = "none";
+    if(currentDivIndex>0){
+    currentDivIndex--;
+    }
+    if (currentDivIndex >= divs.length) {
+      currentDivIndex = 0;
+    }
+    divs[currentDivIndex].style.display = "block";
+  }
+  fullscreen = 1
+}
+  divs[currentDivIndex].style.display = "block";
+
+  
+</script>
+
+</body>
+</html>
+
+<!--
+
+<div class="ulamek">
+  <div>3 * 5</div>
+  <div class="line"></div>
+  <div>5 - 6</div>
+</div>
+
+-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+
+    #menu-container {
+      position: fixed;
+      top: 0;
+      right: 0;
+      
+      color: white;
+      padding: 10px;
+      display: none;
+      opacity: 0;
+      transition: opacity 0.3s ease-in-out;
+    }
+
+    #menu-container img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+    }
+
+    #menu-toggle {
+      cursor: pointer;
+      position: fixed;
+      top: 10px;
+      right: 10px;
+      color: white;
+    }
+
+    #overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+    }
+
+    #menu-container.active, #overlay.active {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 1;
+    }
+  </style>
+</head>
+<body>
+    <div onclick="showNextDiv()" style="position: fixed; bottom:20px; right:20px; background:#333; color:white; padding:10px; z-index:9;">
+      >
+    </div>
+     <div onclick="showPrevDiv()" style="position: fixed; bottom:20px; left:20px; background:#333; color:white; padding:10px; z-index:9;">
+      <
+     </div>
+  <div id="menu-toggle">&#9776; Pomoc</div>
+  <div id="overlay"></div>
+  <div id="menu-container">
+      <div id="image-container">
+    <img src="./z.png" id="image" style="position: fixed; top: 50%; left:50%;background-color: #333;transform:translate(-50%,-50%); padding:20px; width: 90%; height: 90%" alt="Obrazek">
+      </div>
+  </div>
+
+
+
+  <script>
+  setTimeout(function(){
+    
+  },4000)
+  </script>
+
+
+  <script>
+    // Dodanie obsługi zdarzenia dla kliknięcia w przycisk menu-toggle
+    document.getElementById('menu-toggle').addEventListener('click', function() {
+      // Znalezienie menu-container i overlay
+      var menuContainer = document.getElementById('menu-container');
+      var overlay = document.getElementById('overlay');
+
+      // Toggle klasy 'active' na menu-container i overlay
+      menuContainer.classList.toggle('active');
+      overlay.classList.toggle('active');
+      setTimeout(function(){
+        var imageContainer = document.getElementById('image-container');
+        var image = document.getElementById('image');
+        imageContainer.addEventListener('click', function(event) {
+          var rect = image.getBoundingClientRect();
+          var x = (event.clientX - rect.left) / rect.width * 200;
+          var y = (event.clientY - rect.top) / rect.height * 200;
+          image.style.transformOrigin = x + '% ' + y + '%';
+          image.style.transform = 'scale(1.5)';
+        });
+        
+        document.addEventListener('click', function(event) {
+          if (!imageContainer.contains(event.target)) {
+            image.style.transform = 'none';
+          }
+        });
+      },1000)
+    });
+
+    // Dodanie obsługi zdarzenia dla kliknięcia poza menu-container
+    document.getElementById('overlay').addEventListener('click', function() {
+      // Znalezienie menu-container i overlay
+      var menuContainer = document.getElementById('menu-container');
+      var overlay = document.getElementById('overlay');
+
+      // Usunięcie klasy 'active' z menu-container i overlay
+      menuContainer.classList.remove('active');
+      overlay.classList.remove('active');
+    });
+  </script>
+</body>
+
+</html>
